@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import ProductCard from '../components/ProductCard'
+import products from '../data/products'
 
 export default function Home() {
   return (
@@ -16,27 +18,9 @@ export default function Home() {
       <section className="py-12 px-4 max-w-5xl mx-auto">
         <h2 className="text-3xl font-semibold mb-6 text-center">Product Showcase</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white shadow p-6 rounded">
-            <h3 className="text-xl font-bold mb-2">Island Sunrise</h3>
-            <p className="text-sm">Intensity: 6</p>
-            <p className="text-sm">Roast: Medium</p>
-            <p className="text-sm">Flavor: Bright citrus &amp; vanilla</p>
-            <p className="text-sm">Brand: Seychelles Roast</p>
-          </div>
-          <div className="bg-white shadow p-6 rounded">
-            <h3 className="text-xl font-bold mb-2">Tropical Midnight</h3>
-            <p className="text-sm">Intensity: 9</p>
-            <p className="text-sm">Roast: Dark</p>
-            <p className="text-sm">Flavor: Cocoa &amp; spice</p>
-            <p className="text-sm">Brand: Seychelles Roast</p>
-          </div>
-          <div className="bg-white shadow p-6 rounded">
-            <h3 className="text-xl font-bold mb-2">Coral Espresso</h3>
-            <p className="text-sm">Intensity: 8</p>
-            <p className="text-sm">Roast: Medium-Dark</p>
-            <p className="text-sm">Flavor: Nutty caramel</p>
-            <p className="text-sm">Brand: Island Bean</p>
-          </div>
+          {products.map((p) => (
+            <ProductCard key={p.name} {...p} />
+          ))}
         </div>
       </section>
 
