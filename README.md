@@ -22,3 +22,5 @@ Example meta tags for the homepage:
 
 ## Instagram Captions
 See `instagram_captions.txt` for sample captions.
+
+Additional reference materials (PDF and PPTX) have been moved to the `docs/` directory.
