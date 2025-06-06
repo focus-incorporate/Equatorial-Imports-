@@ -8,7 +8,7 @@ export default function Home() {
         <title>Equatorial-Imports | Premium Coffee Capsules</title>
         <meta name="description" content="Discover sustainable premium coffee capsules from Equatorial-Imports." />
       </Head>
-      <section className="bg-[url('/banner.jpg')] bg-cover bg-center text-white text-center py-20">
+      <section className="bg-cover bg-center text-white text-center py-20">
         <h1 className="text-5xl font-bold mb-4">Equatorial-Imports</h1>
         <p className="text-xl">Savor the world in every capsule</p>
       </section>
