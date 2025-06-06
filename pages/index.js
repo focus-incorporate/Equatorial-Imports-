@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 const products = [
   { blend: 'Ristretto', intensity: 11, description: 'A perfect balance of flavor, body and intensity, ideal for a short Italian-style coffee.' },
   { blend: 'Intenso', intensity: 12, description: 'Dark roast with notes of bitter cocoa. For those who love bold flavors.' },
@@ -9,9 +11,15 @@ const products = [
   { blend: 'Cioccolato', intensity: 8, description: 'Blend of the best beans with the intensity and body of dark chocolate.' }
 ];
 
-function App() {
+export default function Home() {
   return (
     <>
+      <Head>
+        <title>Equatorial Imports Coffee</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+      </Head>
       <header className="hero">
         <h1>Awaken Your Senses, Redefine Your Coffee Moments</h1>
         <p className="tagline">Delivering world-class coffee capsules to your doorstep, sustainably.</p>
@@ -33,7 +41,7 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              {products.map((p) => (
+              {products.map(p => (
                 <tr key={p.blend}>
                   <td>{p.blend}</td>
                   <td>{p.intensity}</td>
@@ -54,5 +62,3 @@ function App() {
     </>
   );
 }
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
