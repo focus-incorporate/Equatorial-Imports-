@@ -1,0 +1,551 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: |
+  Enhanced Cursor 1 Agent SOP: Comprehensive PRD & Task automation with intelligent workflow management and workspace awareness - Practical version for Cursor AI environment.
+globs: 
+alwaysApply: false
+---
+
+# 🦾 Enhanced Cursor 1 Agent SOP — Advanced PRD & Task Automation (Practical)
+
+## Slash Commands
+
+```bash
+/prd [description]    → Generate PRD with smart context detection
+/tasks [prd-file]     → Generate executable task list from PRD
+/rethink [context]    → Re-evaluate with new information
+/execute              → Begin task execution with progress tracking
+/status               → Comprehensive project status report
+/stack                → Analyze and recommend tech stack
+/audit                → Full project health check
+```
+
+---
+
+## 🧠 Intelligent Workspace Awareness
+
+### Workspace Analysis Process
+**On new chat or project start:**
+
+1. **Deep Structure Analysis:**
+   - Scan all directories: `/src`, `/components`, `/api`, `/tests`, `/docs`, `/config`
+   - Parse package managers: `package.json`, `requirements.txt`, `go.mod`, `Cargo.toml`, `pom.xml`
+   - Identify frameworks: React/Vue/Angular, Express/FastAPI/Django, etc.
+   - Detect patterns: Monorepo, microservices, MVC, clean architecture
+
+2. **Smart Stack Detection:**
+   ```javascript
+   {
+     "frontend": {
+       "framework": "React 18.2.0",
+       "language": "TypeScript 5.0",
+       "styling": "Tailwind CSS 3.3",
+       "state": "Zustand",
+       "testing": "Vitest + RTL"
+     },
+     "backend": {
+       "runtime": "Node.js 18",
+       "framework": "Express 4.18",
+       "database": "PostgreSQL + Prisma",
+       "auth": "JWT + bcrypt"
+     },
+     "deployment": {
+       "frontend": "Vercel",
+       "backend": "Railway",
+       "database": "Supabase"
+     }
+   }
+   ```
+
+3. **Architecture Pattern Recognition:**
+   - Component-based architecture
+   - Feature-folder structure vs layer-based
+   - API design patterns (REST, GraphQL, tRPC)
+   - Testing strategies and conventions
+
+### Context Memory (Manual Tracking)
+
+Since Cursor doesn't have persistent memory across sessions, I'll maintain context awareness within each conversation by:
+
+#### Project Context Tracking
+```json
+{
+  "project_context": {
+    "name": "TaskFlow App",
+    "domain": "Productivity/Task Management",
+    "target_users": ["Individual users", "Small teams"],
+    "core_value_prop": "Simple, fast task management with team collaboration"
+  },
+  "technical_stack": {
+    "confirmed": ["React", "TypeScript", "Tailwind", "Supabase"],
+    "rejected": ["Vue", "Redux", "MongoDB"],
+    "reasons": {
+      "React": "Team expertise, component ecosystem",
+      "Redux_rejected": "Zustand simpler for this scale"
+    }
+  },
+  "active_work": {
+    "current_feature": "user-authentication-v2",
+    "completed_features": ["basic-auth", "task-crud", "team-invites"],
+    "in_progress": ["advanced-permissions", "real-time-updates"]
+  },
+  "established_patterns": {
+    "component_structure": "FC with custom hooks",
+    "api_calls": "React Query with custom hooks",
+    "error_handling": "React Error Boundaries + toast notifications",
+    "testing": "Unit tests for utilities, integration for components"
+  }
+}
+```
+
+### Intelligent File Organization Suggestions
+
+#### Recommended Structure
+```
+📁 Your Project/
+├── 📄 CURRENT-TASKS.md              # Active task tracking
+├── 📄 ARCHITECTURE-NOTES.md         # Key decisions and patterns
+├── 📁 docs/
+│   ├── 📄 prds/
+│   │   ├── 📄 user-auth-v1.md
+│   │   └── 📄 real-time-chat-v1.md
+│   └── 📄 task-lists/
+│       ├── 📄 tasks-user-auth.md
+│       └── 📄 tasks-real-time-chat.md
+└── [your existing project structure]
+```
+
+---
+
+## 🎯 Enhanced PRD Generation System
+
+### Smart Context-Aware Process
+
+1. **Intelligent Pre-Check:**
+   ```
+   🔍 Context Analysis:
+   • Detected: React + TypeScript + Supabase project
+   • Existing patterns: Custom hooks, Zustand state, React Query
+   • Similar features: You have basic auth, this looks like auth enhancement
+   • Suggested approach: Extend existing auth system vs rebuild
+   
+   Continue with this context? (y/n)
+   ```
+
+2. **Dynamic Question Framework:**
+   Instead of static checklists, ask contextual questions:
+   
+   **For New Features:**
+   - "This builds on [existing feature]. What's the key difference?"
+   - "Who specifically will use this that isn't using [similar feature]?"
+   
+   **For Enhancements:**
+   - "What's broken/limiting about the current [feature]?"
+   - "What's the ideal user flow you envision?"
+
+3. **Stack-Aware Recommendations:**
+   ```
+   💡 Based on your React + Supabase stack:
+   • Real-time features → Use Supabase subscriptions
+   • Complex state → Extend current Zustand stores  
+   • New UI components → Follow existing Tailwind patterns
+   • Testing → Match current Vitest + RTL setup
+   ```
+
+### Enhanced PRD Template
+
+```markdown
+# 🎯 [Feature Name] PRD
+*Version: 1.0 | Date: 2024-01-15 | Stack: React + TypeScript + Supabase*
+
+## 📋 Quick Summary
+**Problem:** [One sentence: what's broken/missing]
+**Solution:** [One sentence: what we're building]
+**Users:** [Primary user type affected]
+**Success:** [Primary metric that will improve]
+
+## 🎪 Context & Background
+### Why Now?
+- [Business/user driver for timing]
+- [What changed that makes this important]
+
+### How This Fits
+- **Builds on:** [Existing features this extends]
+- **Replaces:** [Anything this deprecates]
+- **Enables:** [Future features this unlocks]
+
+## 👥 User Stories & Flows
+### Primary User Journey
+1. **As [specific user type]**, I start by [entry point]
+2. **I want to [key action]** so that [specific benefit]
+3. **The system should [response]** which lets me [next action]
+4. **Success looks like [end state]**
+
+### Edge Cases & Alternative Flows
+- **If [condition]:** Then [alternative flow]
+- **When [error state]:** User sees [recovery path]
+
+## ⚙️ Functional Requirements
+
+### Core Functionality (Must-Have)
+1. **[Requirement 1]** 
+   - *Acceptance criteria:* [Specific, testable criteria]
+   - *Dependencies:* [Other features/systems needed]
+
+2. **[Requirement 2]**
+   - *Acceptance criteria:* [Specific, testable criteria]
+   - *Dependencies:* [Other features/systems needed]
+
+### Enhanced Experience (Should-Have)
+- [Secondary requirements that improve UX]
+
+### Future Considerations (Could-Have)
+- [Features for later iterations]
+
+## 🚫 Explicit Non-Goals
+- **Will NOT include:** [Clear exclusions]
+- **Will NOT change:** [Existing behavior to preserve]
+- **Will NOT solve:** [Related but separate problems]
+
+## 🎨 Design & User Experience
+
+### Key User Interface Elements
+- [Critical UI components needed]
+- [Interaction patterns to follow/avoid]
+
+### Accessibility Requirements
+- [Specific a11y needs for this feature]
+
+### Mobile/Responsive Considerations
+- [Mobile-specific behavior if different]
+
+## 🔧 Technical Approach
+
+### Architecture Impact
+- **Database changes:** [Schema modifications needed]
+- **API changes:** [New endpoints or modifications]
+- **Frontend patterns:** [New components or hooks]
+
+### Integration Points
+- **External services:** [Third-party APIs or services]
+- **Internal systems:** [Other features this connects to]
+
+### Performance Considerations
+- **Expected load:** [Usage patterns and scale]
+- **Optimization needs:** [Critical performance requirements]
+
+## 📊 Success Metrics & Validation
+
+### Primary Success Mete:** [Measurable outcomes]
+- **Qualitative:** [User satisfaction indicators]
+
+### Validation Approach
+- **Testing strategy:** [How we'll verify it works]
+- **Rollout plan:** [Gradual release approach]
+- **Rollback criteria:** [When we'd revert]
+
+## ❓ Open Questions & Risks
+
+### Unresolved Questions
+- [ ] **Question 1:** [Specific question needing research/decision]
+- [ ] **Question 2:** [Another open item]
+
+### Technical Risks
+- **Risk:** [Potential technical challenge]
+  - *Mitigation:* [How we'll address it]
+
+### Business/User Risks  
+- **Risk:** [Potential user/business impact]
+  - *Mitigation:* [How we'll address it]
+
+## 📚 Reference Materials
+
+### Tech Stack Documentation
+- **[Framework/Library]:** [Version] - [Official docs link]
+- **[Database/Service]:** [Version] - [Official docs link]
+
+### Related Features & Code
+- **Existing feature:** `src/features/auth/` 
+- **Similar patterns:** `src/hooks/useAuth.ts`
+
+### External Resources
+- [Design inspiration, competitor analysis, etc.]
+
+---
+*This PRD follows our established React + TypeScript + Supabase patterns and integrates with existing auth system architecture.*
+```
+
+---
+
+## 📋 Advanced Task Generation System
+
+### Intelligent Task Breakdown Process
+
+1. **PRD Analysis & Validation:**
+   ```
+   ✅ PRD Analysis Complete:
+   • 5 functional requirements identified
+   • 3 integration points with existing code
+   • 2 new database tables needed
+   • 8 UI components required
+   • Testing strategy: Unit + Integration + E2E
+   
+   Ready to generate tasks? This will create ~15-20 actionable items.
+   ```
+
+2. **Context-Aware Task Creation:**
+   - **Leverage existing patterns:** "Use existing `useAuth` hook pattern for `usePermissions`"
+   - **Follow project conventions:** "Add tests in `__tests__/` following current structure"
+   - **Smart dependencies:** "Complete database migration before API endpoints"
+
+### Enhanced Task Template
+
+```markdown
+# 🚀 Implementation Plan: [Feature Name]
+*Version: 1.0 | Date: 2024-01-15 | Estimated: 3-5 days*
+*Based on: [PRD filename] | Stack: [Auto-detected]*
+
+## 📁 Files Impact Analysis
+
+### New Files to Create
+- `src/features/permissions/` - New feature module
+  - `components/PermissionGate.tsx` - Access control component
+  - `hooks/usePermissions.ts` - Permission management logic
+  - `types/permissions.ts` - TypeScript definitions
+  - `api/permissions.ts` - API integration layer
+- `database/migrations/003_permissions.sql` - Database schema
+- `__tests__/permissions/` - Test suite
+  - `PermissionGate.test.tsx` - Component tests
+  - `usePermissions.test.ts` - Hook tests
+
+### Files to Modify
+- `src/types/auth.ts` - Extend user type with permissions
+- `src/hooks/useAuth.ts` - Add permission checking methods
+- `src/components/Layout.tsx` - Integrate permission gates
+- `package.json` - Add any new dependencies
+
+### Configuration Updates
+- `supabase/schema.sql` - Add permission tables
+- `src/lib/supabase.ts` - Add permission queries
+- `.env.example` - Document new environment variables
+
+## 🎯 Task Execution Plan
+
+### Phase 1: Foundation & Data Layer
+- [ ] **1.1** Set up database schema
+  - [ ] Create `user_permissions` table
+  - [ ] Create `role_permissions` table  
+  - [ ] Add foreign key relationships
+  - [ ] Write and test migration script
+  - **Time:** 2 hours | **Files:** `database/migrations/003_permissions.sql`
+
+- [ ] **1.2** Create TypeScript types
+  - [ ] Define `Permission` interface
+  - [ ] Define `Role` interface  
+  - [ ] Define `UserPermissions` type
+  - [ ] Export from main types file
+  - **Time:** 1 hour | **Files:** `src/types/permissions.ts`, `src/types/index.ts`
+
+### Phase 2: API & Business Logic
+- [ ] **2.1** Build permission API layer
+  - [ ] `getUserPermissions(userId)` function
+  - [ ] `checkPermission(user, permission)` function
+  - [ ] `assignPermission(userId, permission)` function
+  - [ ] Error handling and edge cases
+  - **Time:** 3 hours | **Files:** `src/api/permissions.ts`
+
+- [ ] **2.2** Create permission hook
+  - [ ] Build `usePermissions` hook following `useAuth` pattern
+  - [ ] Add permission checking utilities
+  - [ ] Integrate with React Query for caching
+  - [ ] Add loading and error states
+  - **Time:** 2 hours | **Files:** `src/hooks/usePermissions.ts`
+
+### Phase 3: UI Components
+- [ ] **3.1** Build PermissionGate component
+  - [ ] Create base component structure
+  - [ ] Add permission checking logic
+  - [ ] Handle loading and fallback states
+  - [ ] Add TypeScript props and documentation
+  - **Time:** 2 hours | **Files:** `src/features/permissions/components/PermissionGate.tsx`
+
+- [ ] **3.2** Integrate with existing components
+  - [ ] Add permission gates to sensitive UI elements
+  - [ ] Update navigation based on permissions
+  - [ ] Modify existing forms/actions with permission checks
+  - **Time:** 2 hours | **Files:** `src/components/Layout.tsx`, others
+
+### Phase 4: Testing & Quality
+- [ ] **4.1** Unit tests
+  - [ ] Test permission API functions
+  - [ ] Test usePermissions hook
+  - [ ] Test PermissionGate component
+  - [ ] Achieve >90% test coverage
+  - **Time:** 3 hours | **Files:** `__tests__/permissions/*`
+
+- [ ] **4.2** Integration tests
+  - [ ] Test full permission flow
+  - [ ] Test database integration
+  - [ ] Test UI behavior with different permission levels
+  - **Time:** 2 hours | **Files:** `__tests__/integration/permissions.test.ts`
+
+### Phase 5: Documentation & Polish
+- [ ] **5.1** Update documentation
+  - [ ] Add permission system to README
+  - [ ] Document new API functions
+  - [ ] Add usage examples
+  - **Time:** 1 hour | **Files:** `README.md`, `docs/permissions.md`
+
+- [ ] **5.2** Final validation
+  - [ ] Run full test suite
+  - [ ] Performance check with large permission sets
+  - [ ] Security review of permission logic
+  - **Time:** 1 hour | **Files:** Various
+
+## 🎮 Execution Guidelines
+
+### Task Execution Rules
+1. **Dependency-Aware:** Never start a task that depends on incomplete work
+2. **Pattern Consistency:** Follow established project patterns and conventions
+3. **Quality First:** Include testing and validation in each phase
+4. **Documentation:** Update relevant docs as you build
+
+### Progress Tracking Format
+```
+📊 Current Status:
+Phase 1: ████████████████████████ 100% Complete (4/4 tasks)
+Phase 2: ████████████░░░░░░░░░░░░ 60% Complete (3/5 tasks)  
+Phase 3: ░░░░░░░░░░░░░░░░░░░░░░░░ 0% Pending
+Phase 4: ░░░░░░░░░░░░░░░░░░░░░░░░ 0% Pending
+Phase 5: ░░░░░░░░░░░░░░░░░░░░░░░░ 0% Pending
+
+⚡ Next: Task 2.4 - Add error handling to permission API
+🕐 Estimated completion: 2.5 hours remaining
+```
+
+### Quality Checkpoints
+- **After each phase:** Verify all tasks completed and tested
+- **Before Phase 4:** Code review for consistency with existing patterns
+- **Before completion:** Full integration test and performance validation
+
+---
+
+## 🔄 Enhanced Execution Model
+
+### Smart Task Execution Guidelines
+
+1. **Follow Established Patterns:**
+   - Use existing component structures and naming conventions
+   - Follow current folder organization patterns
+   - Match existing TypeScript patterns and interfaces
+   - Use established testing patterns and utilities
+
+2. **Context-Aware Implementation:**
+   - Reference existing similar features for consistency
+   - Integrate with current state management approach
+   - Follow current API patterns and error handling
+   - Match existing styling and component patterns
+
+3. **Quality Assurance:**
+   - Test each component as it's built
+   - Verify TypeScript compilation after changes
+   - Check that builds still work after modifications
+   - Validate against existing code standards
+
+---
+
+## 📈 Status Reporting & Progress Management
+
+### Comprehensive Status Dashboard
+
+```markdown
+## 📊 Project Status Dashboard
+
+### 🎯 Current Focus
+**Feature:** Advanced User Permissions v2.0
+**Phase:** 2/5 - API & Business Logic (60% complete)
+**Next:** Error handling implementation
+**ETA:** 2.5 hours remaining
+
+### 📈 Overall Progress  
+- **Current Feature Phase:** 2 of 5
+- **Tasks Completed:** 8/20
+- **Files Created:** 3
+- **Files Modified:** 2
+- **Estimated Remaining:** 2.5 hours
+
+### 🔧 Technical Status
+- **Build Status:** ✅ Last verified working
+- **TypeScript:** ✅ No type errors
+- **Tests:** ✅ All passing (last run)
+- **Dependencies:** ✅ All installed
+
+### 📝 Key Decisions Made
+- Using existing `useAuth` pattern for consistency
+- Following feature-folder structure established in project
+- Integrating with current Zustand state management
+- Using established error handling patterns
+
+### 🚧 Current Blockers/Issues
+- [None currently / List any issues encountered]
+
+### 📅 Recent Progress
+- [Current session] Completed database schema design
+- [Current session] Built TypeScript interfaces
+- [Current session] Started API layer implementation
+```
+
+### Session Context Tracking
+
+Since Cursor doesn't persist memory, I'll track context within each conversation:
+
+```markdown
+## 🧠 Current Session Context
+
+### Project Understanding
+- **Tech Stack:** [Detected stack from workspace analysis]
+- **Architecture:** [Patterns identified]
+- **Current Feature:** [What we're working on]
+- **Integration Points:** [How this connects to existing code]
+
+### Established This Session
+- **Coding patterns to follow:** [Specific patterns identified]
+- **Files to reference:** [Key existing files for consistency]
+- **Testing approach:** [How to test this feature]
+- **Integration strategy:** [How to connect with existing features]
+```
+
+---
+
+## 🎯 Key Practical Enhancements
+
+### 1. **Realistic Workspace Analysis**
+- Focus on actual file scanning and pattern detection
+- Provide actionable insights about existing codebase
+- Give concrete recommendations based on detected patterns
+
+### 2. **Context-Aware PRD Generation**  
+- Ask intelligent questions based on existing codebase
+- Provide stack-specific recommendations
+- Consider existing patterns and architecture
+
+### 3. **Practical Task Management**
+- Create actionable, dependency-aware task lists
+- Focus on following existing project patterns
+- Include realistic time estimates and quality checkpoints
+
+### 4. **Session-Based Progress Tracking**
+- Track progress within each conversation
+- Maintain context about decisions made
+- Provide clear status updates and next steps
+
+### 5. **Quality-First Approach**
+- Emphasize testing and validation at each step
+- Focus on consistency with existing codebase
+- Include proper documentation and error handling
+
+This practical version maintains all the intelligent features while being realistic about Cursor's current capabilities. It focuses on what can actually be implemented and provides tremendous value through better planning, context awareness, and systematic execution.
